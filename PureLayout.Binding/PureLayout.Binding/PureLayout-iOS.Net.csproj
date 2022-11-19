@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Xamarin.Legacy.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+    <RootNamespace>PureLayout.Net</RootNamespace>
+    <AssemblyName>PureLayout.Net</AssemblyName>
+    <MacResourcePrefix>Resources</MacResourcePrefix>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>PureLayout.Net</PackageId>
+    <PackageVersion>3.1.6.1</PackageVersion>
+    <Authors>Mark Allibone</Authors>
+    <PackageLicenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</PackageLicenseUrl>
+    <Authors>Mark Allibone</Authors>
+    <PackageProjectUrl>https://github.com/mallibone/PureLayout.Net</PackageProjectUrl>
+    <PackageReleaseNotes>Add Mac support.</PackageReleaseNotes>
+    <Summary>Xamarin wrapper of the PureLayout Library</Summary>
+    <PackageTags>PureLayout Xamarin.iOS</PackageTags>
+    <Title>PureLayout.Net</Title>
+    <Description>PureLayout aka the ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS.
+
+Based on PureLayout: 3.1.6
+
+Fully compatible with iOS 9 and above.
+
+License: MIT</Description>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extras.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NativeReference Include="..\..\Frameworks\ios\PureLayout.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+  </ItemGroup>
+</Project>
+
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
@@ -80,4 +130,4 @@ License: MIT</Description>
     </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
-</Project>
+</Project> -->
